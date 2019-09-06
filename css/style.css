@@ -309,7 +309,7 @@ footer .top-btn label:hover {
     }
     header {
         height: 100vh;
-        width: 50vw;
+        width: 65vw;
         background: #006400;
         opacity: 1;
         display: block;
@@ -427,7 +427,7 @@ footer .top-btn label:hover {
         display: inline;
     }
     .collection aside img {
-        height: 65px;
+        height: 55px;
         margin: 5px 6px;
     }
     .collection aside img:hover {
@@ -452,8 +452,8 @@ footer .top-btn label:hover {
         white-space: pre;
     }
     .video .main .video-list iframe {
-        width: 360px;
-        height: 200px;
+        width: 80vw;
+        height: 60vw;
     }
     .video footer {
         height: 16vh;
