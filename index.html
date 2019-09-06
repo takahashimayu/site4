@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>home</title>
+    <script src="script/script.js"></script>
+    <script src="script/home.js"></script>
+    <link rel="stylesheet" href="css/ress.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
+<body class="home">
+    <header class="close-list">
+        <button type="button" class="nav-toggle"></button>
+        <nav>
+            <ul>
+                <li><a href="index.html">home</a></li>
+                <li class="accordion hide">
+                    <a href="#">Illustration Collection</a>
+                    <ul>
+                        <li onclick="transitionPage('dog');">Dog's Gallery</li>
+                        <li onclick="transitionPage('cat');">Cat's Gallery</li>
+                    </ul>
+                </li>
+                <li><a href="videoGallery.html">Video Gallery</a></li>
+                <li><a href="#">column3</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main">
+        <div class="photo-area">
+            <img src="img/00000290.png" alt="ひまわりの花飾り">
+        </div>
+        <h2>お知らせ</h2>
+        <ul>
+            <li><a href="#">2019/XX/XX 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</a></li>
+            <li><a href="#">2018/XX/XX 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</a></li>
+            <li><a href="#">2018/XX/XX 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</a></li>
+            <li><a href="#">2017/XX/XX 〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇〇</a></li>
+        </ul>
+        <h2>お問い合わせフォーム</h2>
+        <p class="alert-message"></p>
+        <form onsubmit="return checkValue();">
+            <input type="text" placeholder="お名前" required><br>
+            <input type="email" placeholder="メールアドレス" required><br>
+            <textarea placeholder="お問合せ内容（200字以内）" onkeyup="showLength(value);" required class="length-check"></textarea>
+            <p>現在、<span id="show-length">0</span>字</p>
+            <input type="submit" value="送信"><br>
+        </form>
+    </div>
+    <footer>
+        <div class="top-btn"><label>トップへ<br>もどる</label></div>
+    </footer>
+</body>
+</html>

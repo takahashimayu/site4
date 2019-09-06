@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Illustration Collection</title>
+    <script src="script/script.js"></script>
+    <script src="script/collection.js"></script>
+    <link rel="stylesheet" href="css/ress.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
+<body class="collection">
+    <header class="close-list">
+        <button type="button" class="nav-toggle"></button>
+        <nav>
+            <ul>
+                <li><a href="index.html">home</a></li>
+                <li class="accordion hide">
+                    <a href="#">Illustration Collection</a>
+                    <ul>
+                        <li onclick="transitionPage('dog');">Dog's Gallery</li>
+                        <li onclick="transitionPage('cat');">Cat's Gallery</li>
+                    </ul>
+                </li>
+                <li><a href="videoGallery.html">Video Gallery</a></li>
+                <li><a href="#">column3</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main">
+        <div class="main-title">
+            <h2></h2>
+        </div>
+        <div class="content">
+            <aside>
+                <div class="container"></div>
+            </aside>
+            <article>
+                <div class="main-image"></div>
+            </article>            
+        </div>
+    </div>
+    <footer><div class="top-btn"><label>トップへ<br>もどる</label></div></footer>
+</body>
+</html>
