@@ -20,14 +20,16 @@ function commonInit() {
     collectionList.addEventListener('click', function(){
         this.classList.toggle('hide');
     }, false);
-    // Illustration Collection マウスオーバー時
-    collectionList.addEventListener('mouseover', function(){
-        this.classList.remove('hide');
-    }, false);
-    // Illustration Collection マウスアウト時
-    collectionList.addEventListener('mouseout', function(){
-        this.classList.add('hide');
-    }, false);
+    if( getUserTerminal === 2 ) {
+        // Illustration Collection マウスオーバー時
+        collectionList.addEventListener('mouseover', function(){
+            this.classList.remove('hide');
+        }, false);
+        // Illustration Collection マウスアウト時
+        collectionList.addEventListener('mouseout', function(){
+            this.classList.add('hide');
+        }, false);
+    }
 
     //　トップへもどるボタンクリック時
     let topButton = document.getElementsByClassName('top-btn');
