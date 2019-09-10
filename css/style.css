@@ -255,6 +255,7 @@ footer .top-btn label:hover {
     font-size: 1.3em;
     padding: 5px;
     margin-bottom: 10px;
+    width: 10em;
 }
 .video .main .search-area input:focus {
     outline: none;
@@ -286,7 +287,7 @@ footer .top-btn label:hover {
 }
 
 /* 画面が480pxまでのとき */
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 480px) {
     button {
         background: none;
         border: none;
@@ -296,11 +297,11 @@ footer .top-btn label:hover {
         appearance: none;
     }
     header .nav-toggle::before{
-        line-height: 2em;
+        line-height: 1.8em;
         content: '\f0c9';
         font-family:'Font Awesome 5 Free';
         font-weight: 900;
-        font-size: 1.4em;
+        font-size: 2em;
         padding: 0 10px;
     }
     header .nav-toggle.close-btn::before {
@@ -456,9 +457,12 @@ footer .top-btn label:hover {
         width: 90vw;
     }
     .video .main .illust-gallery .frame {
-        width: 260px;
-        height: 220px;
+        width: 240px;
+        height: 160px;
         opacity: 0.95;
+    }
+    .video .main .illust-gallery img {
+        height: 160px;
     }
     .video .main .search-area {
         width: 90vw;
