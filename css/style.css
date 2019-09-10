@@ -286,6 +286,86 @@ footer .top-btn label:hover {
     height: 400px;
 }
 
+/* 画面が780pxまでのとき */
+@media screen and (max-width: 780px) {
+    footer .top-btn {
+        position: static;
+        margin: 0 5vw 5vh auto;
+    }
+    footer .top-btn:hover {
+        animation: none;
+    } 
+
+    /* home */
+    .home .main {
+        width: 85vw;
+    }
+    .home .photo-area img {
+        width: 25vw;
+    }
+
+    /* collection */
+    .collection .top-btn {
+        display: block;
+    }
+    .collection .main .main-title {
+        width: 85vw;
+    }    
+    .collection .main .content {
+        flex-direction: column-reverse;
+        width: 85vw;
+    }
+    .collection article .main-image {
+        text-align: center;
+    }
+    .collection article img {
+        width: 70vw;
+        height: auto;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+    .collection article p {
+        text-align: left;
+    }
+    .collection aside .container{
+        display: inline;
+    }
+    .collection aside img {
+        margin: 5px 6px;
+    }
+    .collection aside img:hover {
+        transform: none;
+    }
+
+    /* video */
+    .video .main h1 {
+        top: auto;
+        bottom: 10px;
+        font-size: 2.4em;
+    }
+    .video .main .illust-gallery {
+        width: 85vw;
+    }
+    .video .main .illust-gallery .frame {
+        width: 240px;
+        height: 160px;
+        opacity: 0.95;
+    }
+    .video .main .illust-gallery img {
+        height: 160px;
+    }
+    .video .main .search-area {
+        width: 85vw;
+    }
+    .video .main .video-list iframe {
+        width: 60vw;
+        height: 40vw;
+    }
+    .video .main .video-list {
+        width: 85vw;
+    }
+}
+
 /* 画面が480pxまでのとき */
 @media screen and (max-width: 480px) {
     button {
@@ -380,11 +460,11 @@ footer .top-btn label:hover {
         opacity: 1;
     }
     footer {
-        position: relative;
+        position: static;
         height: 8vh;
     }
     footer .top-btn {
-        position: absolute;
+        position: static;
         bottom: 5vh;
         right: 5vw;
     }
@@ -477,86 +557,5 @@ footer .top-btn label:hover {
     .video .main .video-list {
         width: 80vw;
     }
-    .video footer {
-        height: 16vh;
-    }
-}
-/* 画面が780pxまでのとき */
-@media screen and (max-width: 780px) {
-    footer .top-btn {
-        position: static;
-        margin: 0 5vw 5vh auto;
-    }
-    footer .top-btn:hover {
-        animation: none;
-    } 
 
-    /* home */
-    .home .main {
-        width: 85vw;
-    }
-    .home .photo-area img {
-        width: 25vw;
-    }
-
-    /* collection */
-    .collection .top-btn {
-        display: block;
-    }
-    .collection .main .main-title {
-        width: 85vw;
-    }    
-    .collection .main .content {
-        flex-direction: column-reverse;
-        width: 85vw;
-    }
-    .collection article .main-image {
-        text-align: center;
-    }
-    .collection article img {
-        width: 70vw;
-        height: auto;
-        margin-top: 20px;
-        margin-bottom: 40px;
-    }
-    .collection article p {
-        text-align: left;
-    }
-    .collection aside .container{
-        display: inline;
-    }
-    .collection aside img {
-        margin: 5px 6px;
-    }
-    .collection aside img:hover {
-        transform: none;
-    }
-
-    /* video */
-    .video .main h1 {
-        top: auto;
-        bottom: 10px;
-        font-size: 2.4em;
-    }
-    .video .main .illust-gallery {
-        width: 85vw;
-    }
-    .video .main .illust-gallery .frame {
-        width: 240px;
-        height: 160px;
-        opacity: 0.95;
-    }
-    .video .main .illust-gallery img {
-        height: 160px;
-    }
-    .video .main .search-area {
-        width: 85vw;
-    }
-    .video .main .video-list iframe {
-        width: 60vw;
-        height: 40vw;
-    }
-    .video .main .video-list {
-        width: 85vw;
-    }
 }
