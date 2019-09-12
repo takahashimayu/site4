@@ -20,7 +20,7 @@ function commonInit() {
     collectionList.addEventListener('click', function(){
         this.classList.toggle('hide');
     }, false);
-    if( getUserTerminal === 2 ) {
+    if( getUserTerminal() === 2 ) {
         // Illustration Collection マウスオーバー時
         collectionList.addEventListener('mouseover', function(){
             this.classList.remove('hide');
