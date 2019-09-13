@@ -5,58 +5,54 @@ const mobile = 0;
 const tablet = 1;
 const computer = 2;
 
-// collection.htmlへの画面遷移
-function transitionPage(type) {
-    location.href = `collection.html?type=${ type }`;
-}
+$(function(){
 
-// 共通処理
-function commonInit() {
+    // コンピュータ操作か
+    let isComputer = getUserTerminal() === computer;
 
-    // アコーディオン
-    let collectionList = document.querySelector('.accordion');
+    // アコーディオン動作を設定
+    $('.accordion')
+        .click(function(){
+            $(this).toggleClass('hide');
+        })
+        .mouseover(function(){
+            if( isComputer ) $(this).removeClass('hide');
+        })
+        .mouseout(function(){
+            if( isComputer ) $(this).addClass('hide');
+        })
 
-    // Illustration Collection クリック時
-    collectionList.addEventListener('click', function(){
-        this.classList.toggle('hide');
-    }, false);
-    if( getUserTerminal() === 2 ) {
-        // Illustration Collection マウスオーバー時
-        collectionList.addEventListener('mouseover', function(){
-            this.classList.remove('hide');
-        }, false);
-        // Illustration Collection マウスアウト時
-        collectionList.addEventListener('mouseout', function(){
-            this.classList.add('hide');
-        }, false);
-    }
+    // イラストコレクションリスト　クリック時
+    $('.collection-list')
+        .click(function(){
+            window.location.href = 'collection.html?animaltype=' + $(this).data('animaltype');
+        });
 
     //　トップへもどるボタンクリック時
-    let topButton = document.getElementsByClassName('top-btn');
-    if (topButton.length !== 0) {
-        topButton[0].addEventListener('click', function(){
+    $('.top-btn')
+        .click(function(){
             scrollTo(0, 0);
-        }, false);
-    }
+        });
 
     // ハンバーガーメニューbutton押下時
-    let toggleBtn = document.querySelector('header .nav-toggle');
-    toggleBtn.addEventListener('click', function(){
-        this.classList.toggle('close-btn');
-        document.querySelector('header').classList.toggle('close-list');
-    }, false);
-}
+    $('header .nav-toggle')
+        .click(function(){
+            $(this).toggleClass('close-btn');
+            $('header').toggleClass('close-list');
+        });
 
-// 操作端末取得
-function getUserTerminal() {
-    if (/Android|iPhone|iPod/i.test(navigator.userAgent)) {
-        return mobile;
+    // 操作端末取得
+    function getUserTerminal() {
+        if (/Android|iPhone|iPod/i.test(navigator.userAgent)) {
+            return mobile;
+        }
+        else if (window.matchMedia('(max-width: 768px)').matches) {
+            return tablet;
+        }
+        else if (window.matchMedia('(min-width: 769px)').matches) {
+            return computer;
+        }
+        return '';
     }
-    else if (window.matchMedia('(max-width: 768px)').matches) {
-        return tablet;
-    }
-    else if (window.matchMedia('(min-width: 769px)').matches) {
-        return computer;
-    }
-    return '';
-}
+
+});

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>home</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="script/script.js"></script>
     <script src="script/home.js"></script>
     <link rel="stylesheet" href="css/ress.css">
@@ -21,8 +22,8 @@
                 <li class="accordion hide">
                     <a href="#">Illustration Collection</a>
                     <ul>
-                        <li onclick="transitionPage('dog');">Dog's Gallery</li>
-                        <li onclick="transitionPage('cat');">Cat's Gallery</li>
+                        <li class="collection-list" data-animaltype="dog">Dog's Gallery</li>
+                        <li class="collection-list" data-animaltype="cat">Cat's Gallery</li>
                     </ul>
                 </li>
                 <li><a href="videoGallery.html">Video Gallery</a></li>
@@ -43,12 +44,12 @@
         </ul>
         <h2>お問い合わせフォーム</h2>
         <p class="alert-message"></p>
-        <form onsubmit="return checkValue();">
+        <form>
             <input type="text" placeholder="お名前" required><br>
             <input type="email" placeholder="メールアドレス" required><br>
-            <textarea placeholder="お問合せ内容（200字以内）" onkeyup="showLength(value);" required class="length-check"></textarea>
-            <p>現在、<span id="show-length">0</span>字</p>
-            <input type="submit" value="送信"><br>
+            <textarea placeholder="お問合せ内容（200字以内）" required id="input-content"></textarea>
+            <p>現在、<span id="text-length">0</span>字</p>
+            <input type="button" id="form-submit" value="送信"><br>
         </form>
     </div>
     <footer>

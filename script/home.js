@@ -1,33 +1,25 @@
 'use strict';
 
-window.onload = function() {
-    // 共通初期処理
-    commonInit();
+$(function(){
 
-}
+    // 入力文字数表示
+    $('#input-content')
+        .keyup(function(){
+            let length = $(this).val().trim().length;
+            let color = (length > 200) ? 'red' : 'gray';
 
-// 入力文字数カウント
-function showLength(str) {
-    let length = document.getElementById('show-length');
-    length.innerText = str.trim().length;
-    if(str.trim().length > 200) {
-        length.style.color = 'red';
-    }
-    else {
-        length.style.color = 'gray';
-    }
-}
+            $('#text-length')
+                .text(length)
+                .css('color', color);
+        });
 
-// 入力文字数制限
-function checkValue() {
-    let target = document.getElementsByClassName('length-check');
-    let alertMessage = document.getElementsByClassName('alert-message')[0];
+    // 「送信」ボタンクリック時
+    $('#form-submit')
+        .click(function(){
+            let target = $('#input-content');
+            // 入力内容が200字より多い場合、メッセージを表示
+            if( target.val().trim().length > 200 )
+                $('.alert-message').text('お問合せ内容は200字以内で入力してください');
+        });
 
-    for(let i = 0; i < target.length; i++) {
-        if( target[i].value.trim().length > 200 ) {
-            alertMessage.innerText = 'お問合せ内容は200字以内で入力してください';
-            return false;
-        }
-    }
-    return true;
-}
+});

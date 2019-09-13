@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Video Gallery</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="script/jquery.getvideodata.js"></script>
     <script src="script/script.js"></script>
     <script src="script/gallery.js"></script>
     <link rel="stylesheet" href="css/ress.css">
@@ -21,8 +23,8 @@
                 <li class="accordion hide">
                     <a href="#">Illustration Collection</a>
                     <ul>
-                        <li onclick="transitionPage('dog');">Dog's Gallery</li>
-                        <li onclick="transitionPage('cat');">Cat's Gallery</li>
+                        <li class="collection-list" data-animaltype="dog">Dog's Gallery</li>
+                        <li class="collection-list" data-animaltype="cat">Cat's Gallery</li>
                     </ul>
                 </li>
                 <li><a href="videoGallery.html">Video Gallery</a></li>

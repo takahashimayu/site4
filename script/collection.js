@@ -53,11 +53,8 @@ let catData = [
     {src: 'img/illustrain02-cat10.png', alt: '白猫'}
 ];
 
-window.onload = function() {
-
-    // 共通初期処理
-    commonInit();
-
+$(function(){
+  
     // リクエストを取得する
     let animalType = location.search.split('=')[1];
 
@@ -65,37 +62,39 @@ window.onload = function() {
     let illustData = (animalType === 'cat') ? catData : dogData;
 
     // メインタイトルを表示する
-    let mainTitle = document.querySelector('.main .main-title h2');
-    mainTitle.innerText = animalType.charAt(0).toUpperCase() + animalType.slice(1) + '\'s Gallery';
+    let mainTitle = $('.main .main-title h2');
+    mainTitle.text(animalType.charAt(0).toUpperCase() + animalType.slice(1) + '\'s Gallery');
 
     // サムネイルイメージを表示する
-    let thumbFlame = document.querySelector('.collection aside .container');
+    let thumbFlame = $('.collection aside .container');
     for (let i = 0; i < illustData.length; i++) {
-        let thumbImage = document.createElement('img');
-        thumbImage.setAttribute('src', illustData[i].src);
-        thumbImage.setAttribute('alt', illustData[i].alt);
-        thumbImage.setAttribute('class', animalType);
-        thumbFlame.insertBefore(thumbImage, null);
+        let thumbImage = $('<img>')
+                            .attr('src', illustData[i].src)
+                            .attr('alt', illustData[i].alt)
+                            .addClass('thumb-img')
+                            .addClass(animalType)
+        thumbFlame.append(thumbImage);
     }
 
     // メインイメージ領域に最初のデータを表示する
-    let mainImage = document.createElement('img');
-    mainImage.setAttribute('src', illustData[0].src);
-    mainImage.setAttribute('alt', illustData[0].alt);
+    let mainImage = $('<img>')
+                        .attr('src', illustData[0].src)
+                        .attr('alt', illustData[0].alt);
 
-    let mainMsg = document.createElement('p');
-    mainMsg.innerText = mainImage.alt;
+    let mainMsg = $('<p>')
+                    .text(mainImage.attr('alt'));
 
-    let mainFlame = document.querySelector('.collection .main-image');
-    mainFlame.insertBefore(mainMsg, null);
-    mainFlame.insertBefore(mainImage, null);
+    let mainFlame =$('.collection .main-image')
+                        .append(mainMsg)
+                        .append(mainImage);
 
     // クリックした画像をメインにする
-    thumbFlame.addEventListener('click', function(e){
-        if (e.target.src) {
-            mainImage.src = e.target.src;
-            mainImage.alt = e.target.alt;
-            mainMsg.innerText = e.target.alt;
-        }
-    }, false);
-}
+    $('body').on('click', '.thumb-img', function() {
+        mainImage
+            .attr('src', $(this).attr('src'))
+            .attr('alt', $(this).attr('alt'));
+        mainMsg
+            .text($(this).attr('alt'));
+    });
+
+});
